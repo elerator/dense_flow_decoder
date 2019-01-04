@@ -1,6 +1,8 @@
 # dense_flow_decoder
 
-# If using please cite.
+# Version History
+
+If using please cite.
 
 This version is based on MV-Tractus by Jishnu (2018). See license for version history and full list of authors of previous versions.
 
