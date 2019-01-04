@@ -26,7 +26,11 @@ This version is based on MV-Tractus by Jishnu (2018). See license for version hi
 # Installation
 
 To install lHDF5 see: http://micro.stanford.edu/wiki/Install_HDF5
+
 For installation advice for ffmpeg see:  https://github.com/jishnujayakumar/MV-Tractus
+
+Makefile provided for build from source. Binary for Ubuntu 16.04. provided.
+
 Installation was tested on Ubuntu 16.04. If using Windows consider https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 # Sources:
