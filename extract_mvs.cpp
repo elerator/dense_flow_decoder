@@ -186,7 +186,7 @@ static int open_codec_context(AVFormatContext *fmt_ctx, enum AVMediaType type)
     return 0;
 }
 
-void extract_motion_vectors(char *videopath){
+void extract_motion_vectors(char *videopath, char *outpath){
     int ret = 0;
     AVPacket pkt = { 0 };
     struct stat sb;
@@ -245,7 +245,7 @@ void extract_motion_vectors(char *videopath){
     printf("--------------------------------------------------------------------------------------\n");
 
     //Initialize saver for HDF5
-    saver = new SaveHdf5("motion_vectors.h5","motion_tensor");//Set global variable
+    saver = new SaveHdf5(outpath,"motion_tensor");//Set global variable
     output_width = video_dec_ctx->width/16;//Set global variable
     output_height = video_dec_ctx->height/16;
     saver->init(output_height,output_width);//!!!
@@ -272,5 +272,9 @@ end:
 
 int main(int argc, char **argv)
 {
-	extract_motion_vectors(argv[1]);
+  if(argc == 3){
+	  extract_motion_vectors(argv[1], argv[2]);
+  }else{
+    printf("Provide input filename and output filename.");
+  }
 }
