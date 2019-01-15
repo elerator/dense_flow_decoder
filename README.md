@@ -14,7 +14,7 @@ HDF5 file named motion_vectors.h5 containing motion tensor at node motion_tensor
 
 # Usage: 
 
-./decode_motion filepath_to_video.mp4    
+./decode_motion filepath_to_video.mp4 motion_vectors.h5  
 See jupyter notebook for sample run and loading HDF5 via pytables in python 3.
 
 # Version History
