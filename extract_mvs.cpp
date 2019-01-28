@@ -121,7 +121,7 @@ static int decode_packet(const AVPacket *pkt)
                     int x_max = current_frame[0].size();
                     int y_max = current_frame.size();
 
-                    int vector_x = src_x/16;
+                    int vector_x = src_x/16;//The output is 16 times smaller. We want to have the displacement relative to the output
                     int vector_y = src_y/16;
 
                     if(vector_x >= 0 && vector_x < x_max && vector_y >=0  && vector_y < y_max){
@@ -226,10 +226,10 @@ void extract_motion_vectors(char *videopath, char *outpath){
     printf("*     Author : Michael Gerstenberger (see copyright for version history and authors) *\n");
     printf("*  Used Libs : FFmpeg, HDF5                                                          *\n");
     printf("*Description : A tool to extract motion vectors from H264 videos and save them as    *\n");
-    printf("             : a tensor of size n_frames x width x height x 2 (for dx and dy) in     *\n");
-    printf("             : HDF5 format (One vector for each 16x16 pixels macroblock. Vectors for *\n");
-    printf("             : 8x8 blocks are summerized as this yields a more dense representation. *\n");
-    printf("             : The unit of dx and dy are pixels of the original frames)              *\n");
+    printf("*            : a tensor of size n_frames x width x height x 2 (for dx and dy) in     *\n");
+    printf("*            : HDF5 format (One vector for each 16x16 pixels macroblock. Vectors for *\n");
+    printf("*            : 8x8 blocks are summerized as this yields a more dense representation. *\n");
+    printf("*            : The unit of dx and dy are pixels of the original frames)              *\n");
     printf("*      Input : Video encoded in H264. Other formats may work as well.                *\n");
     printf("*     Output : HDF5 file named motion_vectors.h5 containing motion tensor at node    *\n");
     printf("             : motion_tensor.                                                        *\n");
