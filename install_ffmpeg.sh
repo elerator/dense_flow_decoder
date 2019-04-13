@@ -26,8 +26,8 @@ sudo apt install yasm
 #instal h264 lib
 sudo apt install libx264-dev
 
-#configure
-./configure –prefix=”/opt/dev-tools-sources/ffmpeg/build” –bindir=”/opt/dev-tools-sources/ffmpeg/bin” –enable-gpl –enable-libx264 –enable-static –enable-shared
+#configure #omit - before prefix. Introduce them before enable-gpl etc
+./configure prefix=”/opt/dev-tools-sources/ffmpeg/build” bindir=”/opt/dev-tools-sources/ffmpeg/bin” --enable-gpl --enable-libx264 --enable-static --enable-shared
 
 #make
 sudo make -j${nproc}
