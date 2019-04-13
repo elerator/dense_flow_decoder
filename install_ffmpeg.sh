@@ -40,6 +40,3 @@ sudo make install -j${nproc}
 
 #now update the ldconfig by just calling it
 sudo ldconfig
-
-#Bingo installation complete
-echo "Bingo! FFmpeg Installation complete"
